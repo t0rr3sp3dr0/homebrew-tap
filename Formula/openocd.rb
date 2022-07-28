@@ -3,7 +3,7 @@ class Openocd < Formula
   homepage "https://openocd.org/"
 
   head do
-    url "https://github.com/raspberrypi/openocd.git"
+    url "https://github.com/raspberrypi/openocd.git", branch: "rp2040"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -22,6 +22,6 @@ class Openocd < Formula
                           "--enable-picoprobe",
                           "--prefix=#{prefix}"
     system "make", "-j4"
-    system "make", "install"    
+    system "make", "install"
   end
 end
